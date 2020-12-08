@@ -5,7 +5,7 @@
 . ../../lib/sh-test-lib
 . ../../lib/android-test-lib
 
-JDK="openjdk-8-jdk-headless"
+JDK="openjdk-9-jdk-headless"
 if [ -n "${ANDROID_VERSION}" ] && echo "${ANDROID_VERSION}" | grep -q  "aosp-master"; then
     # only use openjdk-11 for aosp master version
     JDK="openjdk-11-jdk-headless"
