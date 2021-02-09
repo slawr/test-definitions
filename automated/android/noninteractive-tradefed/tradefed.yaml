@@ -62,7 +62,8 @@ run:
         - dmesg > ./output/dmesg-host.txt
         - tar caf tradefed-output-$(date +%Y%m%d%H%M%S).tar.xz ./output
         - ATTACHMENT=$(ls tradefed-output-*.tar.xz)
-        - ../../utils/upload-to-artifactorial.sh -a "${ATTACHMENT}" -u "${URL}" -t "${TOKEN}"
+        #- ../../utils/upload-to-artifactorial.sh -a "${ATTACHMENT}" -u "${URL}" -t "${TOKEN}"
+        - cp "${ATTACHMENT}" /media/genivi_sftp/artifacts/skunkworks/android/results/
         # Send test result to LAVA.
         - ../../utils/send-to-lava.sh ./output/result.txt
         - userdel testuser -f -r || true
